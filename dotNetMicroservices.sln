@@ -7,9 +7,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus", "EventBus", "{D4FC85A0-EAF3-4035-8B4A-1D574D56BF15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetMicroservices.EventBus", "dotNetMicroservices.EventBus\dotNetMicroservices.EventBus.csproj", "{1CDE1027-20BD-4B5A-A4B7-55AD11BBB03B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetMicroservices.EventBus", "dotNetMicroservices.EventBus\dotNetMicroservices.EventBus.csproj", "{1CDE1027-20BD-4B5A-A4B7-55AD11BBB03B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetMicroservices.EventBusRabbitMQ", "dotNetMicroservices.EventBusRabbitMQ\dotNetMicroservices.EventBusRabbitMQ.csproj", "{97AE2B13-580E-4898-8CE5-6B2E64541618}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetMicroservices.EventBusRabbitMQ", "dotNetMicroservices.EventBusRabbitMQ\dotNetMicroservices.EventBusRabbitMQ.csproj", "{97AE2B13-580E-4898-8CE5-6B2E64541618}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{9BD110DA-4F74-4E05-B850-F503885F18CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{93E71647-A6C9-49F7-BDFA-2D924C0B9E6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F9022298-BCCD-4454-9BC7-FA8BB1708D60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{FD761E4F-4B69-42B2-A996-0623BD2ECED4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{2F64FC06-328F-4335-B94D-9C3E9F14750B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetMicroservices.Ordering.Api", "dotNetMicroservices.Ordering.Api\dotNetMicroservices.Ordering.Api.csproj", "{A76E49FE-1A1A-4F0A-AB35-491B25E7FE88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetMicroservices.Ordering.Application", "dotNetMicroservices.Ordering.Application\dotNetMicroservices.Ordering.Application.csproj", "{3E41859C-7816-4A68-991C-84FCF01CDA60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetMicroservices.Ordering.Data", "dotNetMicroservices.Ordering.Data\dotNetMicroservices.Ordering.Data.csproj", "{88501A72-0A5C-4E4F-8BFD-BF499DC85073}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetMicroservices.Ordering.Domain", "dotNetMicroservices.Ordering.Domain\dotNetMicroservices.Ordering.Domain.csproj", "{B0A547BB-52C6-4C3A-8146-FA840872CAAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +43,22 @@ Global
 		{97AE2B13-580E-4898-8CE5-6B2E64541618}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97AE2B13-580E-4898-8CE5-6B2E64541618}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97AE2B13-580E-4898-8CE5-6B2E64541618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A76E49FE-1A1A-4F0A-AB35-491B25E7FE88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A76E49FE-1A1A-4F0A-AB35-491B25E7FE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A76E49FE-1A1A-4F0A-AB35-491B25E7FE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A76E49FE-1A1A-4F0A-AB35-491B25E7FE88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E41859C-7816-4A68-991C-84FCF01CDA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E41859C-7816-4A68-991C-84FCF01CDA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E41859C-7816-4A68-991C-84FCF01CDA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E41859C-7816-4A68-991C-84FCF01CDA60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88501A72-0A5C-4E4F-8BFD-BF499DC85073}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88501A72-0A5C-4E4F-8BFD-BF499DC85073}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88501A72-0A5C-4E4F-8BFD-BF499DC85073}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88501A72-0A5C-4E4F-8BFD-BF499DC85073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0A547BB-52C6-4C3A-8146-FA840872CAAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0A547BB-52C6-4C3A-8146-FA840872CAAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0A547BB-52C6-4C3A-8146-FA840872CAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0A547BB-52C6-4C3A-8146-FA840872CAAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +66,15 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1CDE1027-20BD-4B5A-A4B7-55AD11BBB03B} = {D4FC85A0-EAF3-4035-8B4A-1D574D56BF15}
 		{97AE2B13-580E-4898-8CE5-6B2E64541618} = {D4FC85A0-EAF3-4035-8B4A-1D574D56BF15}
+		{9BD110DA-4F74-4E05-B850-F503885F18CE} = {F7F8EB8B-0227-4CF7-894B-48A490C2520E}
+		{93E71647-A6C9-49F7-BDFA-2D924C0B9E6C} = {9BD110DA-4F74-4E05-B850-F503885F18CE}
+		{F9022298-BCCD-4454-9BC7-FA8BB1708D60} = {9BD110DA-4F74-4E05-B850-F503885F18CE}
+		{FD761E4F-4B69-42B2-A996-0623BD2ECED4} = {9BD110DA-4F74-4E05-B850-F503885F18CE}
+		{2F64FC06-328F-4335-B94D-9C3E9F14750B} = {9BD110DA-4F74-4E05-B850-F503885F18CE}
+		{A76E49FE-1A1A-4F0A-AB35-491B25E7FE88} = {93E71647-A6C9-49F7-BDFA-2D924C0B9E6C}
+		{3E41859C-7816-4A68-991C-84FCF01CDA60} = {2F64FC06-328F-4335-B94D-9C3E9F14750B}
+		{88501A72-0A5C-4E4F-8BFD-BF499DC85073} = {FD761E4F-4B69-42B2-A996-0623BD2ECED4}
+		{B0A547BB-52C6-4C3A-8146-FA840872CAAC} = {F9022298-BCCD-4454-9BC7-FA8BB1708D60}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9403D406-DCFB-4194-80C5-85A6D82EB816}

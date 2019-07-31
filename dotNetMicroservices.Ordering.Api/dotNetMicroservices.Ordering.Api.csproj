@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <UserSecretsId>90312c60-c553-47d6-a72c-c64ad2c1f398</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="7.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dotNetMicroservices.EventBusRabbitMQ\dotNetMicroservices.EventBusRabbitMQ.csproj" />
+    <ProjectReference Include="..\dotNetMicroservices.EventBus\dotNetMicroservices.EventBus.csproj" />
+    <ProjectReference Include="..\dotNetMicroservices.Ordering.Application\dotNetMicroservices.Ordering.Application.csproj" />
+    <ProjectReference Include="..\dotNetMicroservices.Ordering.Data\dotNetMicroservices.Ordering.Data.csproj" />
+  </ItemGroup>
+
+</Project>
