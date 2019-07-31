@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using dotNetMicroservices.Ordering.Application.Interfaces;
+using dotNetMicroservices.Ordering.Application.Models;
 using dotNetMicroservices.Ordering.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,6 +25,12 @@ namespace dotNetMicroservices.Ordering.Api.Controllers
         {
             var a = _orderService.GetOrders();
             return Ok(a);
+        }
+        [HttpPost]
+        public IActionResult Post ([FromBody] Shipment shipment)
+        {
+            _orderService.Shipment(shipment);
+            return Ok(shipment);
         }
 
     }

@@ -8,6 +8,8 @@ using dotNetMicroservices.Ordering.Application.Interfaces;
 using dotNetMicroservices.Ordering.Application.Services;
 using dotNetMicroservices.Ordering.Data.Context;
 using dotNetMicroservices.Ordering.Data.Repository;
+using dotNetMicroservices.Ordering.Domain.CommandHandler;
+using dotNetMicroservices.Ordering.Domain.Commands;
 using dotNetMicroservices.Ordering.Domain.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -59,6 +61,11 @@ namespace dotNetMicroservices.Ordering.Api
         {
             //Domain Bus
             services.AddTransient<IEventBus, RabbitMQBus>();
+
+            //Domain Command
+            services.AddTransient<IRequestHandler<CreateShipmentCommand, bool>, ShipmentCommandHandler>();
+
+
             //Aplication Service
             services.AddTransient<IOrderService, OrderService>();
             //Data
