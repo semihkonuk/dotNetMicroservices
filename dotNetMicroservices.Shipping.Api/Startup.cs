@@ -6,7 +6,9 @@ using dotNetMicroservices.EventBus.Bus;
 using dotNetMicroservices.EventBusRabbitMQ;
 using dotNetMicroservices.Shipping.Api.Data.Context;
 using dotNetMicroservices.Shipping.Api.Data.Repository;
+using dotNetMicroservices.Shipping.Api.EventHandlers;
 using dotNetMicroservices.Shipping.Api.Services;
+using dotNetMicroservices.Shipping.Domain.Events;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -59,7 +61,7 @@ namespace dotNetMicroservices.Shipping.Api
             services.AddTransient<IEventBus, RabbitMQBus>();
 
             //Domain Command
-            //services.AddTransient<IRequestHandler<CreateShipmentCommand, bool>, ShipmentCommandHandler>();
+            services.AddTransient<IEventHandler<ShipmentCreatedEvent>, ShipmentEventHandler>();
 
 
             //Aplication Service
@@ -89,6 +91,14 @@ namespace dotNetMicroservices.Shipping.Api
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Shppin Microservices v1");
             });
             app.UseMvc();
+
+            ConfigureEventBus(app);
+        }
+
+        private void ConfigureEventBus(IApplicationBuilder app)
+        {
+            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
+            eventBus.Subscribe<ShipmentCreatedEvent, ShipmentEventHandler>();
         }
     }
 }
