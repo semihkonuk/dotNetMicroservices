@@ -9,5 +9,6 @@ namespace dotNetMicroservices.Shipping.Api.Data.Repository
     public interface IShippingRepository
     {
         IEnumerable<Shipment> GetAllShipment();
+        void Add(Shipment shipment);
     }
 }

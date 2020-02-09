@@ -58,7 +58,13 @@ namespace dotNetMicroservices.Shipping.Api
         private void RegisterServices(IServiceCollection services)
         {
             //Domain Bus
-            services.AddTransient<IEventBus, RabbitMQBus>();
+            services.AddSingleton<IEventBus, RabbitMQBus>(sp => {
+                var scopeFactory = sp.GetRequiredService<IServiceScopeFactory>();
+                return new RabbitMQBus(sp.GetService<IMediator>(), scopeFactory);
+            });
+
+            //Subscription
+            services.AddTransient<ShipmentEventHandler>();
 
             //Domain Command
             services.AddTransient<IEventHandler<ShipmentCreatedEvent>, ShipmentEventHandler>();

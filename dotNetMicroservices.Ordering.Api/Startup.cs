@@ -60,7 +60,10 @@ namespace dotNetMicroservices.Ordering.Api
         private void RegisterServices(IServiceCollection services)
         {
             //Domain Bus
-            services.AddTransient<IEventBus, RabbitMQBus>();
+            services.AddSingleton<IEventBus, RabbitMQBus>(sp => {
+                var scopeFactory = sp.GetRequiredService<IServiceScopeFactory>();
+                return new RabbitMQBus(sp.GetService<IMediator>(), scopeFactory);
+            });
 
             //Domain Command
             services.AddTransient<IRequestHandler<CreateShipmentCommand, bool>, ShipmentCommandHandler>();

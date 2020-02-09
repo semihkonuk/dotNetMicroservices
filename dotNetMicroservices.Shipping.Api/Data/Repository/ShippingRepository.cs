@@ -15,6 +15,12 @@ namespace dotNetMicroservices.Shipping.Api.Data.Repository
         {
             _shippingDbContext = shippingDbContext;
         }
+
+        public void Add(Shipment shipment)
+        {
+            _shippingDbContext.Add(shipment);
+        }
+
         public IEnumerable<Shipment> GetAllShipment()
         {
             return _shippingDbContext.Shipments;
